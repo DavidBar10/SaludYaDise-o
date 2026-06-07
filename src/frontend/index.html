@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SaludYa - Sistema de Gestión de Citas</title>
+    <link rel="stylesheet" href="../styles/styles.css">
+</head>
+<body>
+
+    <div class="phone-container">
+
+        <div id="view-register" class="view active">
+            <h1 class="title">SaludYa</h1>
+            
+            <div class="form-group">
+                <label>Nombre</label>
+                <input type="text" placeholder="Nombre">
+            </div>
+
+            <div class="form-group">
+                <label>Apellidos</label>
+                <input type="text" placeholder="Apellidos">
+            </div>
+
+            <div class="form-group">
+                <label>Fecha nacimiento</label>
+                <div class="date-row">
+                    <input type="text" class="dd" placeholder="DD" maxlength="2">
+                    <input type="text" class="mm" placeholder="MM" maxlength="2">
+                    <input type="text" class="yyyy" placeholder="YYYY" maxlength="4">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Correo</label>
+                <input type="email" placeholder="Correo">
+            </div>
+
+            <div class="form-group">
+                <label>Contraseña</label>
+                <input type="password" placeholder="Contraseña">
+            </div>
+
+            <label class="checkbox-container">
+                <input type="checkbox" checked>
+                Aceptas los términos y condiciones
+            </label>
+
+            <div class="btn-stack">
+                <button class="btn btn-primary" onclick="switchView('view-appointments-schedule')">Registrarme</button>
+                <button class="btn btn-primary" onclick="switchView('view-login')">Iniciar sesión</button>
+            </div>
+        </div>
+
+        <div id="view-login" class="view">
+            <h1 class="title">SaludYa</h1>
+            <div class="spacer-login"></div>
+            
+            <div class="form-group">
+                <label>Correo Electrónico</label>
+                <input type="email" placeholder="Correo">
+            </div>
+
+            <div class="form-group margin-bottom-large">
+                <label>Contraseña</label>
+                <input type="password" placeholder="Contraseña">
+            </div>
+
+            <div class="btn-stack">
+                <!-- Redirección directa al Dashboard al hacer clic en Ingresar -->
+                <button class="btn btn-primary" onclick="window.location.href='dashboard.html'">Ingresar</button>
+                <button class="btn btn-primary" onclick="switchView('view-register')">Volver al Registro</button>
+            </div>
+        </div>
+
+        <div id="view-appointments-schedule" class="view">
+            <h1 class="title">CITAS</h1>
+
+            <div class="tab-navigation">
+                <button class="tab-btn active">AGENDAR</button>
+                <button class="tab-btn inactive" onclick="switchView('view-appointments-query')">CONSULTAR</button>
+            </div>
+
+            <div class="form-group">
+                <div class="label-container">
+                    <div class="label-icon">
+                        <svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+                    </div>
+                    <label>Paciente</label>
+                </div>
+                <select onchange="this.classList.add('selected')">
+                    <option value="" disabled selected>Selecciona un paciente</option>
+                    <option value="1">Juan Pérez</option>
+                    <option value="2">María Gómez</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <div class="label-container">
+                    <div class="label-icon">
+                        <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"/></svg>
+                    </div>
+                    <label>Especialidad</label>
+                </div>
+                <select onchange="this.classList.add('selected')">
+                    <option value="" disabled selected>Selecciona una especialidad</option>
+                    <option value="1">Medicina General</option>
+                    <option value="2">Pediatría</option>
+                    <option value="3">Cardiología</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <div class="label-container">
+                    <div class="label-icon">
+                        <svg viewBox="0 0 24 24"><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"/></svg>
+                    </div>
+                    <label>Fecha</label>
+                </div>
+                <select onchange="this.classList.add('selected')">
+                    <option value="" disabled selected>Selecciona la fecha</option>
+                    <option value="1">Mañana - 08:00 AM</option>
+                    <option value="2">Próximo Lunes - 10:30 AM</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <div class="label-container">
+                    <div class="label-icon">
+                        <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                    </div>
+                    <label>Sede</label>
+                </div>
+                <select onchange="this.classList.add('selected')">
+                    <option value="" disabled selected>Selecciona la sede</option>
+                    <option value="1">Sede Norte</option>
+                    <option value="2">Sede Centro</option>
+                </select>
+            </div>
+
+            <div class="btn-stack">
+                <button class="btn btn-primary" onclick="alert('Buscando citas disponibles...')">BUSCAR</button>
+                <!-- Redirección al Dashboard al presionar Ver Perfil -->
+                <button class="btn btn-primary" onclick="window.location.href='dashboard.html'">VER PERFIL</button>
+            </div>
+        </div>
+
+        <div id="view-appointments-query" class="view">
+            <h1 class="title">CITAS</h1>
+
+            <div class="tab-navigation">
+                <button class="tab-btn inactive" onclick="switchView('view-appointments-schedule')">AGENDAR</button>
+                <button class="tab-btn active">CONSULTAR</button>
+            </div>
+
+            <div class="form-group">
+                <div class="label-container">
+                    <div class="label-icon">
+                        <svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+                    </div>
+                    <label>Paciente</label>
+                </div>
+                <select onchange="this.classList.add('selected')">
+                    <option value="" disabled selected>Selecciona un paciente</option>
+                    <option value="1">Juan Pérez</option>
+                    <option value="2">María Gómez</option>
+                </select>
+            </div>
+
+            <div class="flex-spacer"></div>
+
+            <div class="btn-stack">
+                <button class="btn btn-primary" onclick="alert('Consultando historial médico...')">BUSCAR</button>
+                <!-- Redirección al Dashboard al presionar Ver Perfil -->
+                <button class="btn btn-primary" onclick="window.location.href='dashboard.html'">VER PERFIL</button>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        function switchView(viewId) {
+            document.querySelectorAll('.view').forEach(view => {
+                view.classList.remove('active');
+            });
+            document.getElementById(viewId).classList.add('active');
+        }
+    </script>
+</body>
+</html>

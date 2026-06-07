@@ -1,0 +1,219 @@
+* {
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    background: linear-gradient(180deg, #7A96FF 0%, #C9D6FF 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+}
+
+.phone-container {
+    background-color: #ffffff;
+    width: 424px;
+    height: auto;
+    min-height: 724px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    padding: 35px 28px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+}
+
+.view {
+    display: none;
+    flex-direction: column;
+    height: 100%;
+    flex-grow: 1;
+}
+
+.view.active {
+    display: flex;
+}
+
+.title {
+    font-size: 42px;
+    font-weight: 700;
+    text-align: center;
+    margin-top: 5px;
+    margin-bottom: 25px;
+    color: #000000;
+    letter-spacing: -0.5px;
+    text-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);
+}
+
+.form-group {
+    margin-bottom: 16px;
+    width: 100%;
+}
+
+.label-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 8px;
+}
+
+.label-icon {
+    width: 32px;
+    height: 32px;
+    background-color: #F0F2F5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+}
+
+.label-icon svg {
+    width: 18px;
+    height: 18px;
+    fill: #65676B;
+}
+
+label {
+    font-size: 16px;
+    font-weight: bold;
+    color: #000000;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+select {
+    width: 100%;
+    padding: 13px 16px;
+    font-size: 15px;
+    border: 1px solid #E4E6EB;
+    border-radius: 8px;
+    outline: none;
+    color: #1c1e21;
+    background-color: #ffffff;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input::placeholder {
+    color: #B0B3B8;
+}
+
+select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'><path fill='%230A3793' d='M7 10l5 5 5-5z'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 24px;
+    color: #B0B3B8;
+}
+
+select:focus-not-placeholder, 
+select.selected {
+    color: #1c1e21;
+}
+
+.date-row {
+    display: flex;
+    gap: 10px;
+}
+.date-row input {
+    text-align: center;
+}
+.date-row input.dd, .date-row input.mm { flex: 1; }
+.date-row input.yyyy { flex: 1.5; }
+
+/* Checkbox de Términos */
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 22px 0;
+    cursor: pointer;
+    font-size: 15px;
+    color: #000000;
+    user-select: none;
+}
+
+.checkbox-container input {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    accent-color: #1D3D8F;
+}
+
+.btn-stack {
+    margin-top: auto; /* Empuja los botones al fondo */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.btn {
+    width: 100%;
+    padding: 14px;
+    font-size: 15px;
+    font-weight: bold;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    text-align: center;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.15);
+    transition: opacity 0.2s, transform 0.1s;
+}
+
+.btn:active {
+    transform: scale(0.99);
+}
+
+.btn-primary {
+    background-color: #1D3D8F;
+}
+
+.tab-navigation {
+    display: flex;
+    gap: 12px;
+    width: 100%;
+    margin-bottom: 25px;
+}
+
+.tab-btn {
+    flex: 1;
+    padding: 12px;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.15);
+}
+
+.tab-btn.active {
+    background-color: #0084FF;
+    color: #ffffff;
+}
+
+.tab-btn.inactive {
+    background-color: #24428E;
+    color: #ffffff;
+}
+
+.spacer-login {
+    margin-top: 40px;
+}
+
+.margin-bottom-large {
+    margin-bottom: 40px;
+}
+
+.flex-spacer {
+    flex-grow: 1;
+}

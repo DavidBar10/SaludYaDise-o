@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SaludYa - Dashboard Administrativo</title>
+    <link rel="stylesheet" href="../styles/dashboard.css">
+</head>
+<body>
+
+    <div class="dashboard-container">
+        
+        <aside class="sidebar">
+            <div class="sidebar-logo">SaludYa</div>
+            <nav class="sidebar-menu">
+                <a href="#" id="menu-agenda" class="menu-item active" onclick="switchDashboardView('view-agenda')">
+                    <span class="menu-icon">📅</span> Agenda
+                </a>
+                <a href="#" class="menu-item">
+                    <span class="menu-icon">👤</span> Usuarios
+                </a>
+                <a href="#" class="menu-item">
+                    <span class="menu-icon">🩺</span> Especialistas
+                </a>
+                <a href="#" id="menu-informes" class="menu-item" onclick="switchDashboardView('view-informes')">
+                    <span class="menu-icon">📊</span> Informes
+                </a>
+                <a href="../frontend/index.html" class="menu-item logout">
+                    <span class="menu-icon">🚪</span> Cerrar sesión
+                </a>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            
+            <header class="calendar-header">
+                <span class="month-title">MAYO</span>
+                <div class="nav-arrows">
+                    <button class="arrow-btn">◀</button>
+                    <button class="arrow-btn">▶</button>
+                </div>
+            </header>
+
+            <div id="view-agenda" class="dashboard-view active">
+                <div class="agenda-grid">
+                    
+                    <div class="left-panel">
+                        <div class="kpi-container">
+                            <div class="kpi-card kpi-blue">
+                                <span class="kpi-title">Próximas citas</span>
+                                <span class="kpi-value">5</span>
+                            </div>
+                            <div class="kpi-card kpi-green">
+                                <span class="kpi-title">Citas programadas</span>
+                                <span class="kpi-value">19</span>
+                            </div>
+                            <div class="kpi-card kpi-yellow">
+                                <span class="kpi-title">Citas canceladas</span>
+                                <span class="kpi-value">4</span>
+                            </div>
+                        </div>
+
+                        <div class="schedule-card">
+                            <div class="schedule-timeline">
+                                <div class="time-row"><div class="time-label">9:00</div><div class="time-slots"></div></div>
+                                <div class="time-row">
+                                    <div class="time-label">10:00</div>
+                                    <div class="time-slots">
+                                        <div class="appointment app-blue" style="width: 23%; left: 0;"><strong>Barbara Reyes</strong><br>Procedimiento<br>10:00 - 11:00</div>
+                                        <div class="appointment app-orange" style="width: 25%; left: 26%;"><strong>Matias Garcia</strong><br>Procedimiento<br>10:00 - 11:30</div>
+                                        <div class="appointment app-lightgreen" style="width: 25%; left: 53%;"><strong>Antonia Cardona</strong><br>Procedimiento<br>9:00 - 10:30</div>
+                                        <div class="appointment app-gray" style="width: 20%; left: 80%;"><strong>Barbara Reyes</strong><br>Procedimiento</div>
+                                    </div>
+                                </div>
+                                <div class="time-row">
+                                    <div class="time-label">11:00</div>
+                                    <div class="time-slots">
+                                        <div class="appointment app-lightgreen" style="width: 23%; left: 0;"><strong>Antonia Cardona</strong><br>Procedimiento<br>11:00 - 12:30</div>
+                                    </div>
+                                </div>
+                                <div class="time-row">
+                                    <div class="time-label">12:00</div>
+                                    <div class="time-slots">
+                                        <div class="appointment app-orange" style="width: 25%; left: 53%;"><strong>Antonia Cardona</strong><br>Procedimiento<br>12:00 - 13:30</div>
+                                        <div class="appointment app-blue" style="width: 23%; left: 80%;"><strong>Matias Garcia</strong><br>Procedimiento<br>12:00 - 13:00</div>
+                                    </div>
+                                </div>
+                                <div class="time-row">
+                                    <div class="time-label">13:00</div>
+                                    <div class="time-slots">
+                                        <div class="appointment app-blue" style="width: 25%; left: 26%;"><strong>Antonia Cardona</strong><br>Procedimiento<br>13:00 - 14:30</div>
+                                    </div>
+                                </div>
+                                <div class="time-row">
+                                    <div class="time-label">14:00</div>
+                                    <div class="time-slots">
+                                        <div class="appointment app-lightgreen" style="width: 23%; left: 0;"><strong>Matias Garcia</strong><br>Procedimiento<br>14:00 - 15:30</div>
+                                    </div>
+                                </div>
+                                <div class="time-row">
+                                    <div class="time-label">15:00</div>
+                                    <div class="time-slots">
+                                        <div class="appointment app-blue" style="width: 25%; left: 53%;"><strong>Antonia Cardona</strong><br>Procedimiento<br>15:00 - 17:00</div>
+                                        <div class="appointment app-orange" style="width: 23%; left: 80%;"><strong>Barbara Reyes</strong><br>Procedimiento</div>
+                                    </div>
+                                </div>
+                                <div class="time-row">
+                                    <div class="time-label">16:00</div>
+                                    <div class="time-slots">
+                                        <div class="appointment app-pink" style="width: 23%; left: 0;"><strong>Barbara Reyes</strong><br>Procedimiento</div>
+                                        <div class="appointment app-lightgreen" style="width: 23%; left: 26%;"><strong>Matias Garcia</strong><br>Procedimiento</div>
+                                        <div class="appointment app-gray" style="width: 23%; left: 80%;"><strong>Matias Garcia</strong><br>Procedimiento</div>
+                                    </div>
+                                </div>
+                                <div class="time-row">
+                                    <div class="time-label">17:00</div>
+                                    <div class="time-slots">
+                                        <div class="appointment app-gray" style="width: 23%; left: 26%;"><strong>Antonia Cardona</strong><br>Procedimiento<br>17:00 - 18:00</div>
+                                        <div class="appointment app-blue" style="width: 23%; left: 80%;"><strong>Antonia Cardona</strong><br>Procedimiento<br>17:00 - 19:00</div>
+                                    </div>
+                                </div>
+                                <div class="time-row">
+                                    <div class="time-label">18:00</div>
+                                    <div class="time-slots">
+                                        <div class="appointment app-orange" style="width: 23%; left: 0;"><strong>Antonia Cardona</strong><br>Procedimiento<br>18:00 - 20:00</div>
+                                        <div class="appointment app-orange" style="width: 25%; left: 53%;"><strong>Matias Garcia</strong><br>Procedimiento<br>18:00 - 20:00</div>
+                                    </div>
+                                </div>
+                                <div class="time-row"><div class="time-label">19:00</div><div class="time-slots"></div></div>
+                                <div class="time-row"><div class="time-label">20:00</div><div class="time-slots"></div></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="right-panel">
+                        <div class="mini-calendar">
+                            <div class="calendar-days-grid">
+                                <div>Dom</div><div>Lun</div><div>Mar</div><div>Mie</div><div>Jue</div><div>Vie</div><div>Sab</div>
+                                <div class="inactive-day">26</div><div class="inactive-day">27</div><div class="inactive-day">28</div><div class="inactive-day">29</div><div class="inactive-day">30</div><div>1</div><div>2</div>
+                                <div>3</div><div>4</div><div>5</div><div>6</div><div>7</div><div>8</div><div>9</div>
+                                <div>10</div><div>11</div><div>12</div><div>13</div><div>14</div><div>15</div><div>16</div>
+                                <div>17</div><div>18</div><div>19</div><div>20</div><div>21</div><div>22</div><div>23</div>
+                                <div>24</div><div>25</div><div>26</div><div>27</div><div>28</div><div>29</div><div>30</div>
+                                <div>31</div><div class="inactive-day">1</div><div class="inactive-day">2</div><div class="inactive-day">3</div><div class="inactive-day">4</div><div class="inactive-day">5</div><div class="inactive-day">6</div>
+                            </div>
+                        </div>
+
+                        <div class="upcoming-card">
+                            <h3>Citas Próximas</h3>
+                            <ul class="upcoming-list">
+                                <li><span>10:00</span> Aná López</li>
+                                <li><span>11:30</span> Carlos Martínez</li>
+                                <li><span>15:00</span> Laura Gómez</li>
+                                <li><span>9:00</span> José Rodríguez</li>
+                                <li><span>18:00</span> David Gil</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div id="view-informes" class="dashboard-view">
+                <div class="reports-grid">
+                    
+                    <div class="main-calendar-card">
+                        <div class="main-calendar-days">
+                            <div>Domingo</div><div>Lunes</div><div>Martes</div><div>Miercoles</div><div>Jueves</div><div>Viernes</div><div>Sabado</div>
+                        </div>
+                        <div class="main-calendar-cells">
+                            <div class="cell inactive-cell">26</div><div class="cell inactive-cell">27</div><div class="cell inactive-cell">28</div><div class="cell inactive-cell">29</div><div class="cell inactive-cell">30</div><div class="cell inactive-cell">1</div><div class="cell">2</div>
+                            <div class="cell">3</div><div class="cell">4</div><div class="cell">5</div><div class="cell">6</div><div class="cell">7</div><div class="cell">8</div><div class="cell">9</div>
+                            <div class="cell">10</div><div class="cell">11</div><div class="cell">12</div><div class="cell">13</div><div class="cell">14</div><div class="cell">15</div><div class="cell">16</div>
+                            <div class="cell">17</div><div class="cell">18</div><div class="cell">19</div><div class="cell">20</div><div class="cell">21</div><div class="cell">22</div><div class="cell">23</div>
+                            <div class="cell">24</div><div class="cell">25</div><div class="cell">26</div><div class="cell">27</div><div class="cell">28</div><div class="cell">29</div><div class="cell">30</div>
+                            <div class="cell">31</div><div class="cell inactive-cell">1</div><div class="cell inactive-cell">2</div><div class="cell inactive-cell">3</div><div class="cell inactive-cell">4</div><div class="cell inactive-cell">5</div><div class="cell inactive-cell">6</div>
+                        </div>
+                    </div>
+
+                    <div class="reports-right-panel">
+                        <div class="selection-prompt-card">
+                            <div class="calendar-blue-icon">📅</div>
+                            <h4>Selecciona un día</h4>
+                            <p>Para ver el resumen de citas</p>
+                        </div>
+
+                        <div class="quick-actions-card">
+                            <h4>Acciones rápidas</h4>
+                            <button class="action-row">➕ Crear nueva cita</button>
+                            <button class="action-row">🔍 Buscar Paciente</button>
+                            <button class="action-row">👁️ Ver todas las citas</button>
+                            <button class="action-row">📋 Ver reportes</button>
+                        </div>
+                    </div>
+                </div>
+
+                <footer class="system-summary-bar">
+                    <div class="summary-title-section">
+                        <span class="summary-chart-icon">📊</span>
+                        <span>Resumen General del sistema</span>
+                    </div>
+                    <div class="summary-metrics">
+                        <div class="metric-item">📅 <strong>8</strong> citas hoy</div>
+                        <div class="metric-item">⏰ <strong>24</strong> citas esta semana</div>
+                        <div class="metric-item">👤 <strong>2</strong> Pacientes Nuevos</div>
+                        <div class="metric-item">💰 <strong>$ 1.200.000</strong> Estimados esta semana</div>
+                    </div>
+                </footer>
+            </div>
+
+        </main>
+    </div>
+
+    <script>
+        function switchDashboardView(viewId) {
+            // Alternar clases activas en las vistas
+            document.querySelectorAll('.dashboard-view').forEach(view => view.classList.remove('active'));
+            document.getElementById(viewId).classList.add('active');
+
+            // Alternar clases en el menú lateral
+            document.querySelectorAll('.menu-item').forEach(item => item.classList.remove('active'));
+            if(viewId === 'view-agenda') document.getElementById('menu-agenda').classList.add('active');
+            if(viewId === 'view-informes') document.getElementById('menu-informes').classList.add('active');
+        }
+    </script>
+</body>
+</html>
